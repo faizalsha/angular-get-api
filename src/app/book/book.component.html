@@ -1,7 +1,8 @@
 <p>book works!</p>
 <h1>{{book.total_pages}}</h1>
-<div *ngFor = "let b of book">
+<div *ngFor = "let b of book.results">
     <p>{{ b.popularity }}</p>
+    <p>{{ b.title }}</p>
     <h1>Hello in lopp</h1>
 </div>
-
+<a routerLink="/cart" class="button fancy-button">Checkout</a>

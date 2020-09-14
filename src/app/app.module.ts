@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
-import { HttpClientModule } from '@angular/common/http'
-
+import { HttpClientModule } from '@angular/common/http';
+import { TopicComponent } from './topic/topic.component';
+import { AddTopicComponent } from './add-topic/add-topic.component'
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent
+    BookComponent,
+    TopicComponent,
+    AddTopicComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: '', component: TopicComponent},
+      {path: 'addTopic', component: AddTopicComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
